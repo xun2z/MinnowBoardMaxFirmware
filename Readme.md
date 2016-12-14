@@ -1,4 +1,4 @@
-AudioSsdtUpdate.edi and associate .aml files are avaible as
+AudioSsdtUpdate.efi and associated .aml files are avaible as
 pre-compiled binaries under X64/
 
 The code for the application and .asl files is under AudioSsdtUpdate.
