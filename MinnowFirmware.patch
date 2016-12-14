@@ -1,0 +1,52 @@
+diff --git a/MdePkg/Include/Library/DebugLib.h b/MdePkg/Include/Library/DebugLib.h
+index 219d147..6a126c2 100644
+--- a/MdePkg/Include/Library/DebugLib.h
++++ b/MdePkg/Include/Library/DebugLib.h
+@@ -332,7 +332,7 @@ DebugPrintLevelEnabled (
+   @param  StatusParameter  EFI_STATUS value to evaluate.
+ 
+ **/
+-#if !defined(MDEPKG_NDEBUG)
++#if 0 //!defined(MDEPKG_NDEBUG)
+   #define ASSERT_EFI_ERROR(StatusParameter)                                              \
+     do {                                                                                 \
+       if (DebugAssertEnabled ()) {                                                       \
+diff --git a/Vlv2TbltDevicePkg/PlatformPkgGccX64.dsc b/Vlv2TbltDevicePkg/PlatformPkgGccX64.dsc
+index a3f4c9a..7f0f6e7 100644
+--- a/Vlv2TbltDevicePkg/PlatformPkgGccX64.dsc
++++ b/Vlv2TbltDevicePkg/PlatformPkgGccX64.dsc
+@@ -1570,7 +1570,8 @@ MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteSmmDxe.inf
+ 
+   Vlv2TbltDevicePkg/Application/FirmwareUpdate/FirmwareUpdate.inf
+   Vlv2TbltDevicePkg/Application/SsdtUpdate/SsdtUpdate.inf
+-
++  Vlv2TbltDevicePkg/Application/AudioSsdtUpdate/AudioSsdtUpdate.inf
++  
+ [BuildOptions]
+ #
+ # Define Build Options both for EDK and EDKII drivers.
+diff --git a/Vlv2TbltDevicePkg/PlatformPkgX64.dsc b/Vlv2TbltDevicePkg/PlatformPkgX64.dsc
+index 1b6f31d..753d4c9 100644
+--- a/Vlv2TbltDevicePkg/PlatformPkgX64.dsc
++++ b/Vlv2TbltDevicePkg/PlatformPkgX64.dsc
+@@ -1575,6 +1575,7 @@ MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteSmmDxe.inf
+ 
+   Vlv2TbltDevicePkg/Application/FirmwareUpdate/FirmwareUpdate.inf
+   Vlv2TbltDevicePkg/Application/SsdtUpdate/SsdtUpdate.inf
++  Vlv2TbltDevicePkg/Application/AudioSsdtUpdate/AudioSsdtUpdate.inf
+ 
+ [BuildOptions]
+ #
+diff --git a/Vlv2TbltDevicePkg/bld_vlv.sh b/Vlv2TbltDevicePkg/bld_vlv.sh
+index 569865f..4729839 100755
+--- a/Vlv2TbltDevicePkg/bld_vlv.sh
++++ b/Vlv2TbltDevicePkg/bld_vlv.sh
+@@ -178,7 +178,7 @@ sed -i '/^TOOL_CHAIN_TAG/d' Conf/target.txt
+ sed -i '/^MAX_CONCURRENT_THREAD_NUMBER/d' Conf/target.txt
+ 
+ ACTIVE_PLATFORM=$PLATFORM_PACKAGE/PlatformPkgGcc"$Arch".dsc
+-TOOL_CHAIN_TAG=GCC46
++TOOL_CHAIN_TAG=GCC48
+ MAX_CONCURRENT_THREAD_NUMBER=1
+ echo ACTIVE_PLATFORM = $ACTIVE_PLATFORM                           >> Conf/target.txt
+ echo TARGET          = $TARGET                                    >> Conf/target.txt
