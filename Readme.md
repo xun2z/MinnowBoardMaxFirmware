@@ -9,8 +9,11 @@ I2C address and GPIO lines for interrupts. The new .asl file needs to
 be listed as well in AudioSsdtUpdate.inf to be included and compiled as
 a .aml binary.
 
-To regenerate the binaries after code updates or addition of new files, use
-source MinnowFirmware.sh
+To regenerate the binaries after code updates or addition of new files:
+
+1. ./MinnowFirmwareSetup.sh to fetch all the required code and patches
+(this step is only needed once)
+2. ./build.sh tp recompile the EFI applcication and AML files
 
 This script was tested on Fedora 24 with Gcc 6.2.1 using the firmware version 0.93 (instructions at https://firmware.intel.com/projects/minnowboard-max )
 
@@ -27,5 +30,6 @@ To enable the audio DSP on MinnowMax, go to the BIOS menu in
 System Setup -> SouthCluster Configuration -> Audio Configuration
 
 'LPE Audio Support' should be changed from Disabled to LPE Audio ACPI mode
+
 'LPE Audio Reported by DSDT' should be changed to disabled (to remove
 the default DSDT settings and enable the SSDT override)
