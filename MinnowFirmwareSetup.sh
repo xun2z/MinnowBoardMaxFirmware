@@ -18,7 +18,11 @@ mv edk2-BaseTools-win32 edk2-platforms/BaseTools/Bin
 cd edk2-platforms
 
 # copy AudioSsdtUpdate application
-cp -r ../../AudioSsdtUpdate Vlv2TbltDevicePkg/Application/AudioSsdtUpdate
+#cp -r ../../AudioSsdtUpdate Vlv2TbltDevicePkg/Application/AudioSsdtUpdate
+# Symlink to code
+cd Vlv2TbltDevicePkg/Application
+ln -s  ../../../../AudioSsdtUpdate/ AudioSsdtUpdate
+cd ../../
 
 # get binary objects
 curl -O https://firmware.intel.com/sites/default/files/MinnowBoard_MAX-0.93-Binary.Objects.zip
@@ -41,16 +45,5 @@ chmod +x ./edksetup.sh ./Vlv2TbltDevicePkg/bld_vlv.sh ./Vlv2TbltDevicePkg/Build_
 # last step before compilation, fix GCC issues and add AudioSsdtUpdate
 patch -p1 < ../../MinnowFirmware.patch
 
-echo "START COMPILATION"
-
-cd Vlv2TbltDevicePkg/
-./Build_IFWI.sh MNW2 Release
-#./Build_IFWI.sh MNW2 Debug
-#cp Stitch/*.bin ../../
-
-cp ../Build/Vlv2TbltDevicePkg/RELEASE_GCC48/X64/Vlv2TbltDevicePkg/Application/AudioSsdtUpdate/AudioSsdtUpdate/OUTPUT/*.efi ../../../X64
-cp ../Build/Vlv2TbltDevicePkg/RELEASE_GCC48/X64/Vlv2TbltDevicePkg/Application/AudioSsdtUpdate/AudioSsdtUpdate/OUTPUT/*.aml ../../../X64
-
-cd ../../../X64
-echo "the images are now under `pwd`"
-ls -l *.efi *.aml
+echo "MinnowFirmware now setup"
+cd ../..
