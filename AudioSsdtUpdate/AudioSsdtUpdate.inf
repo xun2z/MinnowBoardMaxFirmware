@@ -28,7 +28,7 @@
   RT5640.asl
   RT5645.asl
   RT5651.asl
-
+  RT5677.asl
 
 [Packages]
   MdePkg/MdePkg.dec
