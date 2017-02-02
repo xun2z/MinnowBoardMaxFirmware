@@ -11,7 +11,7 @@ cd ..
 
 git clone https://github.com/tianocore/edk2-BaseTools-win32.git
 cd edk2-BaseTools-win32/
-git checkout ea691aec89b06aa83474100df1de000a875b4ea0
+git checkout c73d8d4141ba27bbca545207d3bc36c532cb6773
 cd ..
 mv edk2-BaseTools-win32 edk2-platforms/BaseTools/Bin
 
@@ -25,9 +25,9 @@ ln -s  ../../../../AudioSsdtUpdate/ AudioSsdtUpdate
 cd ../../
 
 # get binary objects
-curl -O https://firmware.intel.com/sites/default/files/MinnowBoard_MAX-0.93-Binary.Objects.zip
-unzip MinnowBoard_MAX-0.93-Binary.Objects.zip
-mv MinnowBoard_MAX-0.93-Binary.Objects/* . # move all objects to current directory
+curl -O https://firmware.intel.com/sites/default/files/MinnowBoard_MAX-0.94-Binary.Objects.zip
+unzip MinnowBoard_MAX-0.94-Binary.Objects.zip
+mv MinnowBoard_MAX-0.94-Binary.Objects/* . # move all objects to current directory
 
 # get OpenSSL, patch it and compile it in workspace
 curl -O https://www.openssl.org/source/openssl-1.0.2d.tar.gz
