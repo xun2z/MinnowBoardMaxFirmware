@@ -29,6 +29,7 @@
   RT5645.asl
   RT5651.asl
   RT5677.asl
+  PCM512X.asl
 
 [Packages]
   MdePkg/MdePkg.dec
