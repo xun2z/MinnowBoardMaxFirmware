@@ -30,6 +30,7 @@
   RT5651.asl
   RT5677.asl
   PCM512X.asl
+  WM8731.asl
 
 [Packages]
   MdePkg/MdePkg.dec
