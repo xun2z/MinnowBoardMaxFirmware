@@ -235,10 +235,11 @@ EFIAPI
 
   //
   // Programming GPIOC_099 (PLT_CLK3) to Native to enable audio
+  // 0x68 is the GPIO offset, the actual GPIO offset is 0x68*16=0x680
   //
-  Tmp_Gpio99_Val = MmioRead32(IoBase + 0x0068);
+  Tmp_Gpio99_Val = MmioRead32(IoBase + 0x00680);
   Tmp_Gpio99_Val = Tmp_Gpio99_Val | BIT0;
-  MmioWrite32(IoBase + 0x0068, Tmp_Gpio99_Val);
+  MmioWrite32(IoBase + 0x00680, Tmp_Gpio99_Val);
 
   return Status;
   }
