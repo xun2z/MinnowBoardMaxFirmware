@@ -32,6 +32,7 @@
   PCM512X.asl
   WM8731.asl
   CX20721.asl
+  DA7212.asl
 
 [Packages]
   MdePkg/MdePkg.dec
