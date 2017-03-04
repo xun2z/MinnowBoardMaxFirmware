@@ -33,6 +33,7 @@
   WM8731.asl
   CX20721.asl
   DA7212.asl
+  LPEX.asl
 
 [Packages]
   MdePkg/MdePkg.dec
