@@ -2,9 +2,11 @@ mkdir Firmware
 cd Firmware
 
 # make sure you have nasm, uuid-devel, libuuid-devel, acpica-tools
+# also make sure you use gcc-4.x and g++-4.x, gcc-4.8 is recommeded
+sudo apt install nasm uuid-dev acpica-tools gcc-4.8 g++-4.8
 
 # pull all the needed files from GIT
-git clone https://github.com/tianocore/edk2-platforms.git -b minnowboard-max-udk2015
+git clone https://github.com/tianocore/edk2-platforms.git
 cd edk2-platforms/
 git checkout 74a5c7c849543cd98424bb299ab82e1d131c75bb
 cd ..
