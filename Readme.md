@@ -15,7 +15,7 @@ To regenerate the binaries after code updates or addition of new files:
 (this step is only needed once)
 2. ./build.sh tp recompile the EFI applcication and AML files
 
-This script was tested on Fedora 24 with Gcc 6.2.1 using the firmware version 0.93 (instructions at https://firmware.intel.com/projects/minnowboard-max )
+This script was tested on Ubuntu 16.04 with Gcc 5.4.0 using the firmware version 1.00 (instructions at https://firmware.intel.com/projects/minnowboard-max )
 
 Several patches to the default firmware tree were required to compile, see
 MinnowFirmware.patch (which also add the AudioSsftUpdate.inf reference
